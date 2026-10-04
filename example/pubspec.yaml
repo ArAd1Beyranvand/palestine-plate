@@ -1,0 +1,19 @@
+name: palestine_plate_example
+description: Minimal example — a modern West Bank plate, with its theme derived from usage.
+publish_to: none
+version: 1.0.0
+
+environment:
+  sdk: '>=3.10.0 <4.0.0'
+  flutter: ">=1.17.0"
+
+resolution: workspace
+
+dependencies:
+  flutter:
+    sdk: flutter
+  core_plate: ^0.11.0
+  palestine_plate: ^0.3.0
+
+dev_dependencies:
+  flutter_lints: ^6.0.0
