@@ -4,6 +4,8 @@ GO VEGAN 🌱
 
 ==================================
 
+From the mighty people of Iran to the free people of Palestine to view examples:
+
 https://platexample.ir/#/discover/palestine
 
 # palestine_plate
@@ -229,7 +231,6 @@ from the repo and this package took its name.
 
 ## Also available
 
-From the mighty people of Iran to the free people of Palestine to view examples:
 
 - [`plate_core`](https://pub.dev/packages/plate_core) - Paint license plates.
 - [`plate_keypad`](https://pub.dev/packages/plate_keypad) - A character picker for license plates.
