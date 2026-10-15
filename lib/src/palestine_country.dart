@@ -1,14 +1,13 @@
-import 'package:plate_core/plate_core.dart';
 import 'package:flutter/widgets.dart';
+import 'package:plate_core/plate_core.dart';
 
 import 'palestine_colors.dart';
 
-/// Country blocks on Palestinian plates. West Bank carries `ف` / `P` in ink;
-/// Gaza carries the flag. Multiple consts for West Bank because ink varies by
-/// usage; all use `code: 'ps'` and render-time composition with theme and usage.
+/// Country blocks on Palestinian plates: `ف / P` in ink on the West Bank (one
+/// const per ink), the flag in Gaza. All share `code: 'ps'`.
 abstract final class PSCountries {
-  /// `ف / P` in green (ordinary West Bank plate). Rule between the two lines
-  /// lives on the spec, not the country, since [CountryPanel] only paints caption.
+  /// `ف / P` in green. The rule between the lines lives on the spec;
+  /// [CountryPanel] paints only the caption.
   static const PlateCountry westBankGreenInk = PlateCountry(
     code: 'ps',
     captionLines: ['ف', 'P'],
@@ -17,7 +16,7 @@ abstract final class PSCountries {
     flag: null,
   );
 
-  /// `ف / P` in white for dark fields (public transport, trade plates).
+  /// `ف / P` in white, for dark fields.
   static const PlateCountry westBankWhiteInk = PlateCountry(
     code: 'ps',
     captionLines: ['ف', 'P'],
@@ -26,7 +25,7 @@ abstract final class PSCountries {
     flag: null,
   );
 
-  /// `ف / P` in red (government and duty-exempt plates).
+  /// `ف / P` in red.
   static const PlateCountry westBankRedInk = PlateCountry(
     code: 'ps',
     captionLines: ['ف', 'P'],
@@ -35,9 +34,8 @@ abstract final class PSCountries {
     flag: null,
   );
 
-  /// `ف  P` on one line (two-line motorcycle plate). Necessary because
-  /// [CountryPanel] stacks lines vertically only. Divider omitted: would depend
-  /// on font metrics this package doesn't ship.
+  /// `ف  P` on one line, for the two-line motorcycle plate, since
+  /// [CountryPanel] only stacks lines.
   static const PlateCountry westBankGreenInkInline = PlateCountry(
     code: 'ps',
     captionLines: ['ف  P'],
@@ -46,9 +44,8 @@ abstract final class PSCountries {
     flag: null,
   );
 
-  /// Empty country block (one-line motorcycle plate). Identity block drawn by
-  /// spec as labels and rule, not by country panel. Compares equal to other
-  /// West Bank consts via `code: 'ps'`.
+  /// No caption, for the one-line motorcycle plate whose spec draws the
+  /// identity block itself.
   static const PlateCountry westBankGreenInkBlank = PlateCountry(
     code: 'ps',
     captionLines: [],
@@ -57,7 +54,7 @@ abstract final class PSCountries {
     flag: null,
   );
 
-  /// Gaza 2012–2021: flag rotated, aspect 1:2 (vertical on plate's right strip).
+  /// Gaza 2012–2021: the flag rotated, at 1:2.
   static const PlateCountry gaza2012 = PlateCountry(
     code: 'ps',
     captionLines: [],
@@ -70,7 +67,7 @@ abstract final class PSCountries {
     ),
   );
 
-  /// Gaza, 2021 onward: the flag the right way up, at its official 2:1 ratio.
+  /// Gaza from 2021: the flag upright, at 2:1.
   static const PlateCountry gaza2021 = PlateCountry(
     code: 'ps',
     captionLines: [],
