@@ -6,6 +6,20 @@ import 'palestine_colors.dart';
 /// Country blocks on Palestinian plates: `ف / P` in ink on the West Bank (one
 /// const per ink), the flag in Gaza. All share `code: 'ps'`.
 abstract final class PSCountries {
+  static const PlateDrawing _flag = PlateDrawing(1200, 600, <PlateShape>[
+    PlateRectShape(0, 0, 1200, 600, Color(0xFF007A3D)),
+    PlateRectShape(0, 0, 1200, 400, Color(0xFFFFFFFF)),
+    PlateRectShape(0, 0, 1200, 200, Color(0xFF000000)),
+    PlatePolygonShape(<Offset>[Offset(0, 0), Offset(400, 300), Offset(0, 600)], Color(0xFFCE1126)),
+  ]);
+
+  static const PlateDrawing _flagVertical = PlateDrawing(600, 1200, <PlateShape>[
+    PlateRectShape(0, 0, 600, 1200, Color(0xFF000000)),
+    PlateRectShape(0, 0, 400, 1200, Color(0xFFFFFFFF)),
+    PlateRectShape(0, 0, 200, 1200, Color(0xFF007A3D)),
+    PlatePolygonShape(<Offset>[Offset(0, 0), Offset(600, 0), Offset(300, 400)], Color(0xFFCE1126)),
+  ]);
+
   /// `ف / P` in green. The rule between the lines lives on the spec;
   /// [CountryPanel] paints only the caption.
   static const PlateCountry westBankGreenInk = PlateCountry(
@@ -59,10 +73,7 @@ abstract final class PSCountries {
     panelColor: Color(0x00000000),
     panelTextColor: PSColors.black,
     flagAspectRatio: 1 / 2,
-    flag: SvgPlateAsset(
-      'assets/flags/Flag_of_Palestine_vertical.svg',
-      package: 'palestine_plate',
-    ),
+    flag: _flagVertical,
   );
 
   /// Gaza from 2021: the flag upright, at 2:1.
@@ -72,9 +83,6 @@ abstract final class PSCountries {
     panelColor: Color(0x00000000),
     panelTextColor: PSColors.black,
     flagAspectRatio: 2 / 1,
-    flag: SvgPlateAsset(
-      'assets/flags/Flag_of_Palestine.svg',
-      package: 'palestine_plate',
-    ),
+    flag: _flag,
   );
 }
