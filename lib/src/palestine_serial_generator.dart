@@ -8,8 +8,7 @@ import 'palestine_usage.dart';
 /// Synthetic serials for demos and tests, one generator per scheme, drawn from
 /// the sets the validators accept. Pass a seeded [Random] to reproduce.
 abstract final class PSSerialGenerator {
-  /// Values for a modern West Bank [spec]; throws [ArgumentError] if the spec
-  /// lacks a required group.
+  /// Throws [ArgumentError] if [spec] lacks a required text group.
   static List<String?> modernWestBank(PlateSpec spec, {Random? random}) {
     final rng = random ?? Random();
     final values = List<String?>.filled(spec.slots.length, null);
@@ -30,7 +29,6 @@ abstract final class PSSerialGenerator {
     return values;
   }
 
-  /// Values for a legacy West Bank [spec]; throws as [modernWestBank] does.
   static List<String?> legacyWestBank(PlateSpec spec, {Random? random}) {
     final rng = random ?? Random();
     final values = List<String?>.filled(spec.slots.length, null);
@@ -52,7 +50,7 @@ abstract final class PSSerialGenerator {
     return values;
   }
 
-  /// Values for a Gaza [spec] (prefix `3`); throws as [modernWestBank] does.
+  /// Gaza prefix is always `3`.
   static List<String?> gaza(PlateSpec spec, {Random? random}) {
     final rng = random ?? Random();
     final values = List<String?>.filled(spec.slots.length, null);
@@ -85,7 +83,6 @@ abstract final class PSSerialGenerator {
     return indices;
   }
 
-  /// [values] joined with no separator.
   static String toFilename(List<String?> values) =>
       values.map((v) => v ?? '').join();
 

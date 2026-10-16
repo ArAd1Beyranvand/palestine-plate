@@ -20,12 +20,10 @@ enum PSGovernorate {
 
   const PSGovernorate(this.letter, this.arabicName, this.englishName);
 
-  /// The single Latin capital printed on the plate.
   final String letter;
   final String arabicName;
   final String englishName;
 
-  /// Issued letters in allocation order.
   static const List<String> letters = [
     'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'J', 'K', 'L', 'M', 'N', //
   ];
@@ -36,7 +34,6 @@ enum PSGovernorate {
   /// Pre-2012 Gaza letters, rejected on West Bank plates.
   static const List<String> reservedGazaLetters = ['P', 'Q', 'R', 'S', 'T'];
 
-  /// Governorate for [letter], or null if not issued.
   static PSGovernorate? byLetter(String letter) =>
       values.where((g) => g.letter == letter).firstOrNull;
 }

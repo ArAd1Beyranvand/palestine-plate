@@ -30,7 +30,6 @@ class PSWestBankModernValidator extends GatedPlateValidator {
     governorate: entry.group('governorate'),
   );
 
-  /// Validates the fields without a spec.
   static PlateValidation validateFields({
     required String region,
     required String serial,

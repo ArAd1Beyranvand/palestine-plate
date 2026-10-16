@@ -5,9 +5,8 @@ import 'palestine_alphabets.dart';
 import 'palestine_country.dart';
 import 'palestine_slots.dart';
 
-/// Gaza plate designs, one grammar (3·DDDD·DD) with a flag in place of the
-/// identity block. The usage digits pick the glyph colour. Dimensions are
-/// provisional (CALIBRATE), copied from the West Bank plates.
+/// Gaza plates (3·DDDD·DD) with a flag in place of the identity block.
+/// Dimensions are provisional (CALIBRATE), copied from the West Bank plates.
 abstract final class PSGazaPlates {
   static const List<PlateTextGroup> _groups = [
     PlateTextGroup([0], key: 'prefix'),

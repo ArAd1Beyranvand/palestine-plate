@@ -16,7 +16,6 @@ abstract final class PSCountries {
     flag: null,
   );
 
-  /// `ف / P` in white, for dark fields.
   static const PlateCountry westBankWhiteInk = PlateCountry(
     code: 'ps',
     captionLines: ['ف', 'P'],
@@ -25,7 +24,6 @@ abstract final class PSCountries {
     flag: null,
   );
 
-  /// `ف / P` in red.
   static const PlateCountry westBankRedInk = PlateCountry(
     code: 'ps',
     captionLines: ['ف', 'P'],

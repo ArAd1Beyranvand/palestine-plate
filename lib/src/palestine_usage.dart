@@ -34,8 +34,7 @@ final _twoDigits = RegExp(r'^\d\d$');
 
 /// Legacy West Bank usage classes (1994–July 2018), keyed by trailing digits.
 abstract final class PSLegacyUsage {
-  /// Usage for the two-digit [code], or null if not issued. A string, since
-  /// '07' ≠ '7'.
+  /// [code] is a string, since '07' ≠ '7'. Null if not issued.
   static PSUsage? forCode(String code) {
     if (!_twoDigits.hasMatch(code)) return null;
     return switch (int.parse(code)) {
@@ -48,7 +47,6 @@ abstract final class PSLegacyUsage {
     };
   }
 
-  /// Every issued code, ascending.
   static const List<String> codes = [
     '30', '31', '32', //
     '40', '41', '42', '43', '44', '45', '46', '47', '48', '49', //
@@ -68,7 +66,6 @@ abstract final class PSLegacyUsage {
     '9': 'Southern West Bank (Bethlehem, Hebron), after 1995',
   };
 
-  /// Issued district digits, in alphabet order.
   static const List<String> districtCodes = [
     '1', '3', '4', '5', '6', '7', '8', '9', //
   ];
@@ -76,8 +73,8 @@ abstract final class PSLegacyUsage {
 
 /// Gaza usage classes, keyed by trailing digits; they drive glyph colour only.
 abstract final class PSGazaUsage {
-  /// Usage for the Gaza [code], or null if unallocated (30–39, 60–99). The code
-  /// space is unrelated to [PSLegacyUsage]'s.
+  /// Null if unallocated (30–39, 60–99). The code space is unrelated to
+  /// [PSLegacyUsage]'s.
   static PSUsage? forCode(String code) {
     if (!_twoDigits.hasMatch(code)) return null;
     return switch (int.parse(code)) {
@@ -90,7 +87,6 @@ abstract final class PSGazaUsage {
     };
   }
 
-  /// Every allocated code, ascending.
   static List<String> get codes => [
     for (var n = 0; n <= 29; n++) n.toString().padLeft(2, '0'),
     for (var n = 40; n <= 59; n++) n.toString().padLeft(2, '0'),

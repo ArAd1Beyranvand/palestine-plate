@@ -3,7 +3,6 @@ import 'package:plate_core/plate_core.dart';
 import 'palestine_colors.dart';
 import 'palestine_usage.dart';
 
-/// Colour schemes for Palestinian plates, derived from usage.
 abstract final class PSThemes {
   /// Measured from `pics/reference_plate.png`.
   static const double _borderWidthRatio = 0.027;
@@ -47,7 +46,6 @@ abstract final class PSThemes {
     plateRadiusRatio: _plateRadiusRatio,
   );
 
-  /// Theme for a given usage. Commercial and municipality resolve to Gaza themes.
   /// Commercial and municipality resolve to Gaza themes.
   static PlateTheme forUsage(PSUsage usage) => switch (usage) {
     PSUsage.private || PSUsage.leased || PSUsage.police => greenOnWhite,
@@ -97,7 +95,7 @@ abstract final class PSThemes {
     plateRadiusRatio: _plateRadiusRatio,
   );
 
-  /// Theme for the Gaza usage [code], or null if it is unallocated.
+  /// Null if [code] is unallocated.
   static PlateTheme? forGazaUsageCode(String code) {
     return switch (PSGazaUsage.forCode(code)) {
       PSUsage.private => gazaBlack,

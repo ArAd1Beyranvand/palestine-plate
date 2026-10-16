@@ -64,7 +64,6 @@ abstract final class PSWestBankPlates {
     PlateTextGroup([2], key: 'governorate'),
   ];
 
-  /// Standard West Bank car plate (issued since July 2018).
   static final PlateSpec modernCar = PlateSpec(
     id: 'ps.wb.modern.car',
     country: PSCountries.westBankGreenInk,
@@ -123,7 +122,6 @@ abstract final class PSWestBankPlates {
     PlateTextGroup([2], key: 'usage'),
   ];
 
-  /// Pre-2018 West Bank car plate.
   static final PlateSpec legacyCar = PlateSpec(
     id: 'ps.wb.legacy.car',
     country: PSCountries.westBankGreenInk,
@@ -137,7 +135,6 @@ abstract final class PSWestBankPlates {
     textGroups: _legacyGroups,
   );
 
-  /// The identity block of a legacy plate of [usage].
   static PlateCountry legacyCountryForUsage(PSUsage usage) => switch (usage) {
     PSUsage.publicTransport ||
     PSUsage.tradePlate => PSCountries.westBankWhiteInk,
@@ -162,7 +159,6 @@ abstract final class PSWestBankPlates {
     PlateLabel(text: '-', box: PlateBox(50, 30, 21, 24), glyphHeight: 33),
   ];
 
-  /// Modern car wrapped onto two lines.
   static final PlateSpec modernCarTwoLine = PlateSpec(
     id: 'ps.wb.modern.car2l',
     country: PSCountries.westBankGreenInk,
@@ -194,7 +190,6 @@ abstract final class PSWestBankPlates {
     textGroups: _modernGroups,
   );
 
-  /// Legacy car wrapped onto two lines.
   static final PlateSpec legacyCarTwoLine = PlateSpec(
     id: 'ps.wb.legacy.car2l',
     country: PSCountries.westBankGreenInk,
